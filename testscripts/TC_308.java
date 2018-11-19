@@ -1,0 +1,26 @@
+package org.sunbird.testscripts;
+
+import org.sunbird.page.CreateMentorPage;
+import org.sunbird.page.SignUp;
+import org.sunbird.startup.BaseTest;
+import org.testng.annotations.Test;
+
+public class TC_308 extends BaseTest{
+	@Test
+	public void rootOrg() throws Exception {
+		
+		  // Login as Mentor
+	      SignUp mentorLogin = new SignUp();
+	      mentorLogin.userLogin(MENTOR);
+		
+	      // Create Invite Only Batch
+		CreateMentorPage CreateMentorPage = new CreateMentorPage();
+		CreateMentorPage.createInviteBatch();
+		
+		// Verify the batch created
+		CreateMentorPage.verifyCreatedBatch();
+		
+		
+		
+	}
+}
